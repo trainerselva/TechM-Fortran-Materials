@@ -1,0 +1,15 @@
+      PROGRAM FILHND
+      CHARACTER(30) LINE
+      
+      OPEN(UNIT=1, FILE='TEST.DAT', STATUS='NEW')
+      WRITE(1,*)'THIS IS TEST FILE'
+      CLOSE(UNIT=1)
+      
+!       OPEN(UNIT=2, FILE='TEST.DAT', STATUS='OLD')
+!       READ(2,FMT=100) LINE
+! 100   FORMAT(A30)      
+!       PRINT *, 'LINE - ', LINE
+!       WRITE(2,*)'NEW LINE OF TEXT'
+!       CLOSE(2)
+
+      END PROGRAM

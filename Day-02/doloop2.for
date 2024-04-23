@@ -1,0 +1,31 @@
+      PROGRAM LSTVAL
+
+C PROGRAM TO GENERATE LIST OF VALUES
+C --- ASCENDING ORDER ---
+      
+      INTEGER TWOTIMES
+      TWOTIMES(N) = 2 * N
+
+      PRINT *, "ENTER 2 INTEGERS"
+      READ *, N1, N2
+
+      DO 100 I = MIN(N1, N2), MAX(N1, N2)
+        PRINT *, I
+C        I = I + 3
+100   CONTINUE
+
+C ASCENDING AND DESCENDING LIST
+
+      INCR = 1
+      IF (N1 .GT. N2) THEN 
+        INCR = -1
+      ENDIF
+
+      PRINT *, "ASCENDING AND DESCENDING"
+      DO 200 I = N1, N2, INCR
+        PRINT *, I
+200   CONTINUE
+
+      PRINT *, "TWO TIMES 4 IS: ", TWOTIMES(4)
+
+      END PROGRAM

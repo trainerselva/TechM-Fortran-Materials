@@ -1,0 +1,27 @@
+      PROGRAM CHDELIM
+        CHARACTER*30 MYSTR
+        CHARACTER OLD, NEW
+
+        OLD = ','
+        NEW = '#'
+        MYSTR = '10,3.145,INDIA'
+        PRINT *, 'BEFORE: MYSTR ---', MYSTR, '---'
+        CALL REPLACE_DELIM(MYSTR, OLD, NEW)
+        PRINT *, 'AFTER: MYSTR ---', MYSTR, '---'
+
+        PRINT *, 'BEFORE: MYSTR ---', MYSTR, '---'
+        CALL REPLACE_DELIM(MYSTR, '#', '@')
+        PRINT *, 'AFTER: MYSTR ---', MYSTR, '---'
+      END PROGRAM
+
+      SUBROUTINE REPLACE_DELIM(STRING, OLD_DELIM, NEW_DELIM)
+      CHARACTER*(*) STRING
+      CHARACTER OLD_DELIM, NEW_DELIM
+
+      DO 111 I = 1, LEN(STRING)
+        IF (STRING(I:I) .EQ. OLD_DELIM) THEN
+            STRING(I:I) = NEW_DELIM
+        ENDIF
+111   CONTINUE
+
+      END SUBROUTINE
